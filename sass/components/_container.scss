@@ -1,0 +1,38 @@
+// Import Mixin
+@use "../helpers/mixin" as *;
+
+.container {
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+}
+
+@include medea(small) {
+  .container {
+    width: 540px;
+  }
+}
+
+@include medea(medium) {
+  .container {
+    width: 720px;
+  }
+}
+
+@include medea(large) {
+  .container {
+    width: 960px;
+  }
+}
+
+@include medea(X-large) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@include medea(XX-large) {
+  .container {
+    width: 1320px;
+  }
+}

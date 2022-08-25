@@ -1,0 +1,37 @@
+@use "./variables" as *; // Import Variabmes
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  color: $Very-Dark-Blue;
+}
+
+p {
+  font-size: 21px;
+  color: $Grayish-Blue;
+  line-height: 1.4;
+  margin: {
+    top: 20px;
+    bottom: 30px;
+  }
+}
+
+header {
+  overflow-x: hidden;
+}

@@ -1,0 +1,114 @@
+// Import Helpers
+@use "../helpers/variables" as *; // Import Variables
+@use "../helpers/mixin" as *; // Import mixin
+
+.stay-update {
+  padding: 50px 20px;
+  background-color: $Soft-Blue;
+  div {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+
+    p {
+      color: white;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: white;
+    }
+
+    form {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: fit-content;
+      margin: 20px auto;
+
+      input {
+        display: block;
+        margin: auto;
+      }
+
+      input[type="text"] {
+        position: relative;
+        font-size: 18px;
+        height: 100%;
+        width: 300px;
+        padding: 20px 13px;
+        border-radius: 6px;
+        border: none;
+        border: 3px solid transparent;
+        z-index: 3;
+
+        &::placeholder {
+          transition: $hover-transition;
+          color: $Grayish-Blue;
+        }
+        &:focus::placeholder {
+          opacity: 0;
+        }
+      }
+      input[type="submit"] {
+        background-color: $Soft-Red;
+        margin: 20px;
+
+        &:hover {
+          color: $Soft-Red;
+          border-color: $Soft-Red;
+          background-color: white;
+        }
+      }
+
+      @include medea(extra-small) {
+        & {
+          flex-direction: column;
+
+          input {
+            width: 100%;
+          }
+
+          input[type="text"] {
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.email {
+  position: relative;
+  height: 50px;
+
+  p {
+    position: absolute;
+    bottom: 0px;
+    font-size: 12px;
+    width: 100%;
+    padding-left: 4px;
+    margin: 0;
+    background: $Soft-Red;
+    font-style: italic;
+    text-align: left;
+    border-radius: 0px 0px 6px 4px;
+    transition: $transform-transition;
+  }
+
+  &.wrong {
+    input[type="text"] {
+      background-image: url(../../images/icon-error.svg);
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: 96%;
+      border-color: $Soft-Red;
+    }
+
+    p {
+      bottom: -13px;
+    }
+  }
+}

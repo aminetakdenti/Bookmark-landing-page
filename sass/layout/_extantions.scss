@@ -1,0 +1,39 @@
+// Import Helpers
+@use "../helpers/mixin" as *; // Import Mixin
+
+.extantions {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .extantions__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 35px;
+    width: fit-content;
+    margin: 10px auto 100px;
+
+    @include medea(medium) {
+      & {
+        grid-template-columns: repeat(2, 300px);
+      }
+    }
+
+    @include keep-layout(small) {
+      & {
+        grid-template-columns: repeat(1, 300px);
+      }
+    }
+
+    .card:nth-child(2) {
+      transform: translateY(50px);
+    }
+
+    .card:nth-child(3) {
+      transform: translateY(100px);
+    }
+
+    button {
+      margin: auto;
+    }
+  }
+}

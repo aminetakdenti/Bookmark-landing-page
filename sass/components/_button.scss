@@ -1,0 +1,45 @@
+// Import helpers
+@use "../helpers/variables" as *; // Import Variables
+
+@use "../helpers/mixin" as *; // Import Mixin
+
+.btn {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 13px 23px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  font-weight: bold;
+  transition: $hover-transition;
+  border: 3px solid transparent;
+  color: white;
+  width: fit-content;
+}
+
+.soft-blue-btn {
+  @extend .btn;
+  background-color: $Soft-Blue;
+  @include shadow($Soft-Blue, 0.9);
+
+  &:hover {
+    background-color: transparent;
+    color: $Soft-Blue;
+    border-color: $Soft-Blue;
+    box-shadow: none;
+  }
+}
+
+.white-btn {
+  @extend .btn;
+  color: $Very-Dark-Blue;
+  @include shadow($Very-Dark-Blue, 0.2);
+
+  &:hover {
+    background-color: transparent;
+    color: $Very-Dark-Blue;
+    border-color: $Very-Dark-Blue;
+    box-shadow: none;
+  }
+}

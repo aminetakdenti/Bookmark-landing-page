@@ -1,0 +1,79 @@
+// Import Variables
+@use "./variables" as *;
+
+// Medea Mixin
+@mixin medea($size) {
+  @if ($size == extra-small) {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if ($size == small) {
+    @media (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if ($size == medium) {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if ($size == large) {
+    @media (min-width: 992px) and (max-width: 1991px) {
+      @content;
+    }
+  } @else if ($size == X-large) {
+    @media (min-width: 1200px) and (max-width: 1391px) {
+      @content;
+    }
+  } @else if ($size == XX-large) {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// extar-small To medium Layout
+@mixin keep-layout($size) {
+  @if ($size == small) {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if ($size == small) {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if ($size == medium) {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if ($size == large) {
+    @media (max-width: 1991px) {
+      @content;
+    }
+  } @else if ($size == X-large) {
+    @media (max-width: 1391px) {
+      @content;
+    }
+  } @else if ($size == XX-large) {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// Create overlay
+@mixin overlay() {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $overlay-color;
+    z-index: 2;
+  }
+}
+
+// box Shadow
+@mixin shadow($color, $opacity) {
+  box-shadow: 0 3px 5px rgba($color, $opacity);
+}

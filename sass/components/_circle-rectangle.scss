@@ -1,0 +1,42 @@
+// Import helper
+@use "../helpers/variables" as *; // Import Variables
+@use "../helpers/mixin" as *; // Import Variables
+
+.circle-rectangle {
+  background-color: $Soft-Blue;
+  width: 50%;
+  height: 320px;
+  position: absolute;
+  top: 128px;
+  right: 0%;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+@include medea(extra-small) {
+  .circle-rectangle {
+    display: none;
+  }
+}
+
+@include medea(large) {
+  .circle-rectangle {
+    bottom: 0px;
+    right: -104px;
+  }
+}
+
+@include medea(X-large) {
+  .circle-rectangle {
+    bottom: 0px;
+    right: -104px;
+  }
+}
+
+@include medea(XX-large) {
+  .circle-rectangle {
+    top: auto;
+    bottom: 0px;
+    right: -104px;
+  }
+}

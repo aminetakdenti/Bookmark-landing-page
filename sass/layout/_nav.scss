@@ -1,0 +1,128 @@
+// Import Mixin
+@use "../helpers/mixin" as *;
+
+// Import Color
+@use "../helpers/variables" as *;
+
+// Medium To XX-Larg Navbar
+
+nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 60%;
+    z-index: 3;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $Very-Dark-Blue;
+        padding: 10px 15px;
+        display: block;
+        text-transform: uppercase;
+        transition: $hover-transition;
+
+        &#log {
+          background-color: $Soft-Red;
+          color: white;
+          border-radius: 7px;
+          font-weight: 500;
+          box-shadow: $main-shadow;
+          border: 2px solid transparent;
+
+          &:hover {
+            color: $Soft-Red;
+            background-color: transparent;
+            border-color: $Soft-Red;
+          }
+        }
+
+        &:hover {
+          color: $Soft-Red;
+        }
+      }
+    }
+  }
+
+  button#btn {
+    display: none;
+    border: none;
+    background-color: transparent;
+    background-position: center;
+    background-image: url("../../images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25px;
+    width: 30px;
+    cursor: pointer;
+  }
+}
+
+// extra-small to medium  Navbar
+@include keep-layout(medium) {
+  header.overlay {
+    @include overlay;
+  }
+  nav {
+    position: relative;
+
+    .links {
+      display: block;
+      position: absolute;
+      top: 200%;
+      left: 50%;
+      transform: translateX(100%);
+      transition: $transform-transition;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+
+      li {
+        border-top: 1px solid $Grayish-Blue;
+
+        padding: {
+          top: 20px;
+          bottom: 20px;
+        }
+
+        a {
+          width: 100%;
+          color: white;
+          padding: {
+            top: 20px;
+            bottom: 20px;
+          }
+          font-size: 21px;
+          font-weight: 500;
+        }
+
+        a#log {
+          background: none;
+          border-color: $Grayish-Blue;
+        }
+      }
+
+      &.active {
+        transform: translateX(-50%);
+      }
+    }
+    button#btn {
+      display: block;
+      z-index: 3;
+
+      &.active {
+        background-image: url("../../images/icon-close.svg");
+      }
+    }
+  }
+}

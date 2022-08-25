@@ -1,0 +1,28 @@
+// ## Colors
+
+// ### Primary
+$Soft-Blue: hsl(231, 69%, 60%);
+$Soft-Red: hsl(0, 94%, 66%);
+
+// ### Neutral
+$Grayish-Blue: hsl(229, 8%, 60%);
+$Very-Dark-Blue: hsl(229, 31%, 21%);
+
+// ##Transition
+
+// ### Hover
+$hover-transition: 0.25s ease-in-out;
+
+// ### transform
+$transform-transition: transform 0.3s ease;
+
+// Color
+$color-transition: 0.35s ease;
+
+// ## Box Shadow
+
+// ### main-shadow
+$main-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+// ## Overlay Color
+$overlay-color: rgba(hsl(229, 31%, 21%), 0.9);

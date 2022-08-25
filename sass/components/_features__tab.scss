@@ -1,0 +1,123 @@
+// Import Variables
+@use "../helpers/variables" as *;
+
+// Import Mixin
+@use "../helpers/mixin" as *;
+
+.features {
+  position: relative;
+  margin: 50px 0 100px;
+  .feature {
+    &__tab {
+      margin: 50px auto 30px;
+      justify-content: space-between;
+      padding: 0 20px;
+      gap: 48px;
+
+      &__image {
+        flex: 1;
+        width: 100%;
+        z-index: 3;
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &__info {
+        z-index: 3;
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+          font-size: 35px;
+          font-weight: 500;
+          color: $Very-Dark-Blue;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 22px;
+          line-height: 1.4;
+          margin: {
+            top: 20px;
+            bottom: 30px;
+          }
+          color: $Grayish-Blue;
+        }
+      }
+
+      &.active {
+        display: flex;
+      }
+      display: none;
+    }
+  }
+
+  .circle-rectangle {
+    left: -104px;
+    border-radius: 0 9999px 9999px 0;
+  }
+}
+
+@include keep-layout(medium) {
+  .feature {
+    &__tab {
+      flex-direction: column;
+      text-align: center;
+
+      &__info {
+        transform: translateY(50px);
+
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include medea(large) {
+  .features {
+    .circle-rectangle {
+      top: auto;
+      bottom: -60px;
+    }
+  }
+}
+
+@include medea(X-large) {
+  .features {
+    .circle-rectangle {
+      top: auto;
+      bottom: -60px;
+    }
+  }
+}
+
+@include medea(XX-large) {
+  .features {
+    .circle-rectangle {
+      top: auto;
+      bottom: -60px;
+    }
+  }
+}
+
+@include medea(medium) {
+  .circle-rectangle {
+    bottom: 250px;
+    top: auto;
+  }
+}
+
+@include medea(small) {
+  .circle-rectangle {
+    bottom: 320px;
+    top: auto;
+  }
+}

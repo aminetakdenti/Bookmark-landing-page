@@ -1,0 +1,60 @@
+// Import Helpers
+@use "../helpers/mixin" as *; // Import Mixin
+@use "../helpers/variables" as *; // Import Vaiables
+
+.faq {
+  max-width: 700px;
+  margin: 20px auto 50px;
+  padding: 0 25px;
+
+  section {
+    .faq {
+      &__que {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 0;
+        border-top: 1px solid $Grayish-Blue;
+        cursor: pointer;
+
+        h2 {
+          font-weight: 500;
+          transition: $color-transition;
+        }
+
+        button {
+          background: none;
+          border: none;
+          transition: $transform-transition;
+        }
+        &.active {
+          button {
+            transform: rotate(180deg);
+          }
+        }
+
+        &:hover {
+          h2 {
+            color: $Soft-Red;
+          }
+        }
+      }
+      &__ans {
+        margin-top: 0;
+        display: none;
+        transition: $transform-transition;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+    &:last-child {
+      border-bottom: 1px solid $Grayish-Blue;
+    }
+  }
+  .soft-blue-btn {
+    margin: 20px auto;
+    display: block;
+  }
+}

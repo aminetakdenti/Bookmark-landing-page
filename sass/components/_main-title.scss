@@ -1,0 +1,21 @@
+// Import Variables
+@use "../helpers/variables" as *;
+
+.main-title {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+
+  h2,
+  h1 {
+    color: $Very-Dark-Blue;
+    font-size: 30px;
+  }
+
+  p {
+    max-width: 650px;
+    padding: 0 20px;
+  }
+}

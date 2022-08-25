@@ -1,0 +1,90 @@
+// Import Variables
+@use "../helpers/variables" as *;
+
+// Import Mixin
+@use "../helpers/mixin" as *;
+
+.features {
+  .container {
+    .nav {
+      ul {
+        text-align: center;
+        display: flex;
+        width: fit-content;
+        margin: 20px auto 40px;
+
+        margin: {
+          top: 20px;
+          bottom: 40px;
+        }
+
+        li {
+          padding: 40px 45px;
+          border-bottom: 4px solid transparent;
+          transition: $color-transition;
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "";
+            height: 1px;
+            width: 100%;
+            bottom: -5px;
+            left: 0;
+            background-color: hsl(229deg, 8%, 80%);
+          }
+
+          &.active {
+            border-bottom-color: $Soft-Red;
+          }
+
+          h3 {
+            color: $Grayish-Blue;
+            font-size: 22px;
+            font-weight: 500;
+            transition: $color-transition;
+
+            &:hover {
+              color: $Soft-Red;
+            }
+
+            &.active {
+              color: $Very-Dark-Blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include keep-layout(medium) {
+  .features {
+    .container {
+      .nav {
+        > {
+          ul {
+            flex-direction: column;
+
+            li {
+              padding: 20px 45px;
+
+              &:first-child {
+                &::before {
+                  position: absolute;
+                  content: "";
+                  height: 1px;
+                  width: 100%;
+                  top: 0;
+                  left: 0;
+                  background-color: hsl(229deg, 8%, 80%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
